@@ -20,7 +20,8 @@ body {
     padding: 25px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
+    margin: auto auto 1.5rem auto;
+    width:70%;
 }
 
 .h1 {
@@ -55,6 +56,74 @@ body {
     margin-bottom:1.5rem;
 }
 
+.btn__Rock {
+    background: url('../assets/images/icon-rock.svg');
+    background-color: #fff;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-width: 10px;
+    border-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%)) 1;
+    border-style: solid;
+}
+
+.btn__Paper {
+    background: url('../assets/images/icon-paper.svg');
+    background-color: #fff;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-width: 10px;
+    border-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%)) 1;
+    border-style: solid;
+}
+
+.btn__Scissors {
+    background: url('../assets/images/icon-scissors.svg');
+    background-color: #fff;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-width: 10px;
+    border-image: linear-gradient(hsl(39, 89%, 49%),hsl(40, 84%, 53%)) 1;
+    border-style: solid;
+}
+
+.border {
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-width: 10px;
+    border-style: solid;
+    background-origin: border-box;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+
+.border--Paper {
+    border-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%)) 1;
+    padding:20px;
+}
+
+.border--Rock {
+    border-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%)) 1;
+    padding:20px;
+}
+
+.border--Scissors {
+    border-image: linear-gradient(hsl(39, 89%, 49%),hsl(40, 84%, 53%)) 1;
+    padding:20px;
+}
+
 .footer {
     text-align: right;
 }
@@ -67,6 +136,25 @@ body {
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btn--white {
+    background: #fff;
+    color:hsl(229, 25%, 31%)
+}
+
+.btn--white:hover {
+    color:hsl(349, 70%, 56%)
+}
+
+.confirm-winner p {
+    font-size: 34px;
+    margin: 0;
+}
+
+.player {
+    display:flex;
+    justify-content: space-evenly;
 }
 
 .computer {
@@ -115,7 +203,7 @@ body {
   }
   
   .modal-container {
-    width: 60%;
+    width: min-content;
     margin: 0px auto;
     padding: 20px 30px;
     background-color: #fff;
@@ -127,9 +215,10 @@ body {
       display:flex;
       align-items:baseline;
       justify-content: space-between;
+      margin-bottom: 1.5rem;
   }
 
-  .modal-header h3 {
+  .modal-header .h2{
     text-transform: uppercase;
     margin: 0;
     color: hsl(229, 25%, 31%);
@@ -137,7 +226,9 @@ body {
   
   .modal-body {
     margin: 20px 0;
+    text-align: center;
   }
+
   
   .modal-header .btn {
       color: hsl(229, 25%, 31%);
@@ -156,6 +247,17 @@ body {
   }
   
 @media screen and (max-width: 480px) {
+    .header {
+        width: auto;
+    }
+    .computer {
+        flex-wrap: wrap;
+    }
+
+    .confirm-winner {
+        order:3;
+    }
+
     .wrapper {
         width:100%;
     }
@@ -167,5 +269,6 @@ body {
     .footer {
         text-align: center;
     }
+
 
 }

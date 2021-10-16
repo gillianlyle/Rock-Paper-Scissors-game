@@ -11,7 +11,10 @@
             class="btn"
             @click="$emit('close')"
           >
-            X
+            <img
+              src="../assets/images/icon-close.svg"
+              alt="Close modal icon"
+            >
           </button>
         </div>
 
@@ -22,9 +25,7 @@
         </div>
 
         <div class="modal-footer">
-          <slot name="footer">
-            default footer
-          </slot>
+          <slot name="footer" />
         </div>
       </div>
     </div>

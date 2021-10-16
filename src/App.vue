@@ -2,7 +2,7 @@
   <div class="wrapper">
     <header class="header">
       <h1 class="h1">
-        Rock Paper Scissors
+        <img src="./assets/images/logo.svg">
       </h1>
       <div class="score">
         <h2 class="score__title">
@@ -19,15 +19,21 @@
         v-if="!playerGuess"
         class="player"
       >
-        <button @click="getPlayerGuess('Rock')">
-          Rock
-        </button>
-        <button @click="getPlayerGuess('Paper')">
-          Paper
-        </button>
-        <button @click="getPlayerGuess('Scissors')">
-          Scissors
-        </button>
+        <button
+          class="btn__Rock"
+          aria-label="Rock"
+          @click="getPlayerGuess('Rock')"
+        />
+        <button
+          class="btn__Paper"
+          aria-label="Paper"
+          @click="getPlayerGuess('Paper')"
+        />
+        <button
+          class="btn__Scissors"
+          aria-label="Scissors"
+          @click="getPlayerGuess('Scissors')"
+        />
       </div>
       <div
         v-if="playerGuess"
@@ -37,14 +43,13 @@
           <p class="player__guess">
             You picked
           </p>
-          <p>{{ playerGuess }}</p>
+          <div :class="`btn__${playerGuess}`" />
         </div>
-        
           
         <div class="confirm-winner">
           <p> {{ winner }} </p>
           <button
-            class="btn"
+            class="btn btn--white"
             @click="playAgain()"
           >
             Play again
@@ -55,7 +60,7 @@
           <p class="computer__guess">
             The house picked
           </p>
-          <p>{{ computerGuess }}</p>
+          <div :class="`btn__${computerGuess}`" />
         </div>
       </div>
     </main>
@@ -76,7 +81,13 @@
         @close="showModal = false"
       >
         <template #header>
-          <h3>Rules</h3>
+          <h2 class="h2">
+            Rules
+          </h2>
+        </template>
+
+        <template #body>
+          <img src="../src/assets/images/image-rules.svg">
         </template>
       </modal>
     </transition>
@@ -84,7 +95,7 @@
 </template>
 
 <script>
-import Modal from './components/modal.vue';
+import Modal from './components/Modal.vue';
 
  export default {
    name: 'App',
